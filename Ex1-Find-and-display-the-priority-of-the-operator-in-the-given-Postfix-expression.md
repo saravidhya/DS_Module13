@@ -1,57 +1,47 @@
-# EX 1 You’re creating a health monitoring device which stores several sensor readings in an array. To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
-## DATE: 20/11/2025
+# EX 1 Find the N-th Fibonacci Number using Recursion
+
 ## AIM:
-To write a JAVA program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
+To write a recursive Java program to find and display the N-th Fibonacci number.
 
 ## Algorithm
 1. Start
-2. Read n – the number of heartbeat values.
-3. Read the n heartbeat values into an array.
-4. Call the recursive method findMin(arr, index)
-5. Recursive logic:
-6. Display the minimum heartbeat value returned by the recursive function.
-7. Stop
+2. Read an integer N (0 ≤ N ≤ 30)
+3. If N = 0, return 0
+4. If N = 1, return 1
+5. Else, return fib(N-1) + fib(N-2) recursively
+6. Display the result
+7. End
 
 ## Program:
-```
-/*
-Program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
-Developed by: Vidhiya lakshmi S
-RegisterNumber:  212223230238
-*/
-```
-```
+```java
 import java.util.Scanner;
 
-public class MinValueRecursion {
-    public static int findMin(int[] arr, int index) {
-        if (index == arr.length - 1) {
-            return arr[index];
+public class FibonacciRecursive {
+
+    public static int fib(int n) {
+        if(n == 0) {
+            return 0;
+        } else if(n == 1) {
+            return 1;
+        } else {
+            return fib(n-1) + fib(n-2);
         }
-        int minOfRest = findMin(arr, index + 1);
-        return Math.min(arr[index], minOfRest);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of heartbeat readings: ");
         int n = sc.nextInt();
-        int[] heartbeat = new int[n];
-        System.out.println("Enter the heartbeat values:");
-        for (int i = 0; i < n; i++) {
-            heartbeat[i] = sc.nextInt();
-        }
-        int minValue = findMin(heartbeat, 0);
-        System.out.println("Minimum (Lowest) Heartbeat Value = " + minValue);
+        int result = fib(n);
+        System.out.println("Fibonacci Number: " + result);
     }
 }
-
 ```
 
-## Output:
-<img width="459" height="235" alt="image" src="https://github.com/user-attachments/assets/d857b94f-a6ea-4ccc-a2fd-58ac74075c41" />
 
+## Output:
+<img width="489" height="160" alt="Screen Shot 1947-08-25 at 18 54 01" src="https://github.com/user-attachments/assets/78de79e9-33d1-4848-b0d6-724417303d73" />
 
 
 ## Result:
-Thus the JAVA prograM ti find the minimum value (e.g., lowest heartbeat), implement a recursive method has implemented successfully
+Thus the Java program to find and display the N-th Fibonacci number using recursion is implemented successfully.
+
